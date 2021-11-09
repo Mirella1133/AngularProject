@@ -26,6 +26,12 @@ export class AppComponent {
     submit(){
       var url=(document.getElementById("fname") as HTMLInputElement).value
 
+      if(!url.endsWith(".jpg",url.length)){
+
+        window.alert("Bitte geben sie eine Bild URL ein!")
+      }
+      else{
+
       var td_id_node = document.createElement("td");
 
       var id_text_node = document.createTextNode(this.id.toString());
@@ -51,7 +57,7 @@ export class AppComponent {
       this.image_list=url
 
       this.id++;
-
+      }
 
     }
 }
