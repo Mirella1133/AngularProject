@@ -1,26 +1,17 @@
 
 <img src={{image_list}} width="400" height="300">
+<br>
 
-<form action="/action_page.php">
   <label for="fname">URL Adresse:</label><br>
   <br>
-  <input type="text" id="fname" name="fname" value="" placeholder="https://google.com">
-  <input type="button" (click)="submit()" value="Bestätigen">
+  <input type="text" id="urlText" name="fname" value="" placeholder="https://google.com">
+  <button (click)="submit()" >Bestätigen</button>
   <br>
   <br>
-  <input type="button" (click)="clickFunction()" value="Next">
+  <button (click)="clickFunction()">Next</button>
   <br>
   <br>
 
-  <table>
-      <caption>Bild URL</caption>
-      <tr>
-          <th>ID</th>
-          <th>URL</th>
-      </tr>
-      <tr>
-          <td>1</td>
-          <td>https://media.istockphoto.com/photos/studio-portrait-of-a-dog-sticking-out-her-tongue-picture-id1138848967?k=20&m=1138848967&s=612x612&w=0&h=JVCxh4GulisK2v4hVqhxRhZIvveld1RDXsCxRXhxYPk=</td>
-      </tr>
-  </table>
-</form>
+  <div>
+      <p *ngFor="let url of image_path; let i = index">{{i}}: {{url}}</p>
+  </div>
