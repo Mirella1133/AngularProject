@@ -35,4 +35,13 @@ export class ImageServiceService {
       this.image_number=0;
     }
   }
+
+  deletePic(int:number){
+
+
+    this.image_list.forEach( (item, index) => {
+      if(item === this.image_list[int]) this.image_list.splice(index,1);
+    });
+
+  }
 }
