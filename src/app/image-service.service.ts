@@ -17,7 +17,7 @@ export class ImageServiceService {
     var url=(document.getElementById("urlText") as HTMLInputElement).value
 
     if(!url.endsWith(".jpg",url.length)){
-
+      //weg
       window.alert("Bitte geben sie eine Bild URL ein!")
     }
     else{
