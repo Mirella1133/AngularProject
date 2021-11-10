@@ -11,7 +11,10 @@ export class ImageServiceService {
   image_number=0;
 
   timerStatus=false
-  timer :number=0;
+  timer : any=0;
+  resetTimer : any=0;
+
+  alertStatus=false;
 
 
   constructor() {
@@ -20,8 +23,12 @@ export class ImageServiceService {
 
 
   submitPic(){
+
+    this.alertStatus=false;
+
     if(this.timerStatus){
       clearTimeout(this.timer)
+      clearTimeout(this.resetTimer)
     }
     const url = (document.getElementById("urlText") as HTMLInputElement).value
     this.timerStatus=true
@@ -32,8 +39,14 @@ export class ImageServiceService {
         this.image_path=url
         this.image_number=this.image_list.length-1
       }else{
-        console.log("Bitte gültige Url angeben")
+        this.alertStatus=true;
       }    },1000)
+
+      this.resetTimer=setTimeout(()=>{
+        this.alertStatus=false;
+      },5000)
+
+
   }
 
   changePic(){

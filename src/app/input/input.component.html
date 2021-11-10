@@ -4,5 +4,6 @@
 <br>
 <button class="button" (click)="submit()"style="vertical-align:middle"><span>Bestätigen </span></button>
   <br>
+  <span class="label label-danger" *ngIf="imageService.alertStatus">Failed</span>
   <br>
 
