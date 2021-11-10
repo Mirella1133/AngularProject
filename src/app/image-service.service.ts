@@ -40,11 +40,11 @@ export class ImageServiceService {
         this.image_number=this.image_list.length-1
       }else{
         this.alertStatus=true;
-      }    },1000)
+      }    },100)
 
       this.resetTimer=setTimeout(()=>{
         this.alertStatus=false;
-      },5000)
+      },1500)
 
 
   }
