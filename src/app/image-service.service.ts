@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "any"
 })
 export class ImageServiceService {
 
@@ -10,8 +10,8 @@ export class ImageServiceService {
   image_path:string=this.image_list[0];
   image_number=0;
 
-  timerison=false
-  Timer :any;
+  timerStatus=false
+  timer :number=0;
 
 
   constructor() {
@@ -20,13 +20,13 @@ export class ImageServiceService {
 
 
   submitPic(){
-    if(this.timerison){
-      clearTimeout(this.Timer)
+    if(this.timerStatus){
+      clearTimeout(this.timer)
     }
     const url = (document.getElementById("urlText") as HTMLInputElement).value
-    this.timerison=true
-    this.Timer=setTimeout(()=>{
-      this.timerison=false
+    this.timerStatus=true
+    this.timer=setTimeout(()=>{
+      this.timerStatus=false
       if(url.endsWith(".jpg")){
         this.image_list.push(url);
         this.image_path=url
