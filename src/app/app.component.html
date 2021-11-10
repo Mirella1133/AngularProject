@@ -1,5 +1,5 @@
 
-<img src={{image_list}} width="400" height="300">
+<img src={{imageservice.image_list}} width="400" height="300">
 <br>
 
   <label for="fname">URL Adresse:</label><br>
@@ -13,5 +13,5 @@
   <br>
 
   <div>
-      <p *ngFor="let url of image_path; let i = index">{{i}}: {{url}}</p>
+      <p *ngFor="let url of imageservice.image_path; let i = index">{{i}}: {{url}}</p>
   </div>
