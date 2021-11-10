@@ -1,3 +1,4 @@
+
 .button {
   display: inline-block;
   border-radius: 4px;
@@ -36,4 +37,9 @@
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

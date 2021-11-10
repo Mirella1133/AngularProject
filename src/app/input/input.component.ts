@@ -20,5 +20,4 @@ export class InputComponent implements OnInit {
 
     this.imageService.submitPic();
   }
-
 }
