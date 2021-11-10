@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageServiceService } from '../image-service.service';
 
 @Component({
   selector: 'app-input',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
-  constructor() { }
+  constructor(public imageService : ImageServiceService) { }
 
   ngOnInit(): void {
+  }
+
+  submit(){
+    this.imageService.submitPic();
   }
 
 }

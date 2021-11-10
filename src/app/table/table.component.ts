@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImageServiceService } from '../image-service.service';
 
 @Component({
   selector: 'app-table',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  constructor() { }
+  constructor(public imageService: ImageServiceService) { }
 
   ngOnInit(): void {
   }

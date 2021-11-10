@@ -1,1 +1,4 @@
-<p>table works!</p>
+  <div>
+      <p *ngFor="let url of imageService.image_list; let i = index">{{i}}: {{url}}</p>
+  </div>
+

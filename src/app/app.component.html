@@ -1,17 +1,5 @@
+  <app-picture></app-picture>
 
-<img src={{imageservice.image_list}} width="400" height="300">
-<br>
+  <app-input></app-input>
 
-  <label for="fname">URL Adresse:</label><br>
-  <br>
-  <input type="text" id="urlText" name="fname" value="" placeholder="https://google.com">
-  <button (click)="submit()" >Bestätigen</button>
-  <br>
-  <br>
-  <button (click)="clickFunction()">Next</button>
-  <br>
-  <br>
-
-  <div>
-      <p *ngFor="let url of imageservice.image_path; let i = index">{{i}}: {{url}}</p>
-  </div>
+  <app-table></app-table>
