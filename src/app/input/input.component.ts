@@ -8,12 +8,16 @@ import { ImageServiceService } from '../image-service.service';
 })
 export class InputComponent implements OnInit {
 
+  timerison=false
+
   constructor(public imageService : ImageServiceService) { }
 
   ngOnInit(): void {
   }
 
   submit(){
+
+
     this.imageService.submitPic();
   }
 
