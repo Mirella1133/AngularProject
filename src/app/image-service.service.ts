@@ -90,10 +90,12 @@ export class ImageServiceService {
     }
   }
 
+  //Die ImageListe wird mit den Daten des NodeJs Servers gefüllt
   private restore(){
     this.http.get<any>('http://localhost:8081').subscribe(data => this.image_list = data)
   }
 
+  //Änderungen an der ImageListe werden auf den NodeJs Servers geladen
   private store(){
     this.http.post<any>('http://localhost:8081/set', this.image_list)
     .subscribe({next: data => console.log(data),error: error => console.error('There was an error!', error)})
