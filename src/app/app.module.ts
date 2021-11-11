@@ -12,8 +12,12 @@ import {RouterModule, Routes} from "@angular/router";
 import { FailedComponent } from './failed/failed.component';
 import { HttpClientModule } from "@angular/common/http"
 
-const approots: Routes = [{path: '',component: HomeComponent},{path: 'Image',component: ImageComponent},
-  {path: 'Images',component: PictureComponent},{path: '**',component: FailedComponent}]
+const approots: Routes = [
+  {path: '',component: HomeComponent},
+  {path: 'Image',component: ImageComponent},
+  {path: 'Images',component: PictureComponent},
+  {path: '**',component: FailedComponent}
+]
 
 
 @NgModule({

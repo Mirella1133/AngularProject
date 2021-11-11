@@ -8,15 +8,4 @@ import { ImageServiceService } from './image-service.service';
 })
 export class AppComponent {
   title = 'Project1';
-
-  constructor(public imageservice:ImageServiceService){}
-
-
-  clickFunction() {
-    this.imageservice.changePic()
-    }
-
-    submit(){
-      this.imageservice.submitPic()
-    }
 }

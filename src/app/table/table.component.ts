@@ -13,6 +13,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Diese Methode startet die deletePic Methode des ImageServices und gibt dabei die Nummer des Bildes weiter
   clickDelete(int:number){
     this.imageService.deletePic(int)
   }

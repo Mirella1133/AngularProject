@@ -14,10 +14,8 @@ export class InputComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  //Diese Methode startet die submitPic Methode des ImageServices
   submit(){
-
-
     this.imageService.submitPic();
   }
 }

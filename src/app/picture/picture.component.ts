@@ -13,6 +13,7 @@ export class PictureComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //diese Methode startet die Methode changePic des ImageServices
   clickNext(){
     this.imageService.changePic();
   }
