@@ -42,4 +42,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 55px;
+}
+
+.center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
