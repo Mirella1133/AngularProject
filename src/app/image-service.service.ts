@@ -1,24 +1,38 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from "@angular/common/http"
 
 @Injectable({
   providedIn: "any"
 })
 export class ImageServiceService {
 
-  image_list: string[] = ["https://cdn.pixabay.com/photo/2020/04/13/20/48/dog-5040008_960_720.jpg"];
+  private image_list: string[] = ["https://cdn.pixabay.com/photo/2020/04/13/20/48/dog-5040008_960_720.jpg"];
 
-  image_path:string=this.image_list[0];
-  image_number=0;
+  private image_path:string=this.image_list[0];
+  private image_number=0;
 
-  timerStatus=false
-  timer : any=0;
-  resetTimer : any=0;
+  private timerStatus=false
+  private timer : any=0;
+  private resetTimer : any=0;
 
-  alertStatus=false;
+  private alertStatus=false;
 
 
-  constructor() {
+  constructor(private http: HttpClient) {
+    this.restore()
    }
+
+  getImagePath(){
+    return this.image_path
+  }
+
+  getImageList(){
+    return this.image_list
+  }
+
+  getAlertStatus(){
+    return this.alertStatus
+  }
 
 
 
@@ -38,6 +52,7 @@ export class ImageServiceService {
         this.image_list.push(url);
         this.image_path=url
         this.image_number=this.image_list.length-1
+        this.store()
       }else{
         this.alertStatus=true;
       }    },100)
@@ -63,6 +78,7 @@ export class ImageServiceService {
 
     if(index>-1){
       this.image_list.splice(index,1)
+      this.store()
       if(this.image_number-1>=0){
         this.image_path=this.image_list[this.image_number-1]
       }
@@ -70,7 +86,13 @@ export class ImageServiceService {
         this.image_path=this.image_list[this.image_number]
       }
     }
-    
+  }
 
+  private restore(){
+    this.http.get<any>('http://localhost:8081').subscribe(data => this.image_list = data)
+  }
+
+  private store(){
+    this.http.post<any>('http://localhost:8081/set', this.image_list).subscribe({next: data => console.log(data),error: error => console.error('There was an error!', error)})
   }
 }
