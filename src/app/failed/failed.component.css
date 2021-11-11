@@ -24,9 +24,15 @@
 }
 
 .link_404{
-  color: #fff!important;
-  padding: 10px 20px;
-  background: #39ac31;
-  margin: 20px 0;
-  display: inline-block;}
-.contant_box_404{ margin-top:-50px;}
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #FFC0CB;
+  border: none;
+  color: #474e5d;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;}
