@@ -1,8 +1,11 @@
+img {
+  border: 5px solid #FFC0CB;
+  border-radius: 4px;
 
+}
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 55px;
 }
-
