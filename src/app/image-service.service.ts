@@ -33,6 +33,10 @@ export class ImageServiceService {
     return this.alertStatus
   }
 
+  getImageNumber(){
+    return this.image_number
+  }
+
 
 
   submitPic(){

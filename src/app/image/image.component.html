@@ -1,5 +1,11 @@
-<div class="center">
-  <img src={{imageService.getImagePath()}} width="400" height="300" >
-  <br>
+<div >
+
+  <div *ngFor="let i of [0,1];">
+      <div class="row">
+        <div class="col">
+          <img *ngFor="let url of imageService.getImageList().slice(i*3,i*3+3)" src={{url}} width="400" height="300">
+        </div>
+      </div>
+    </div>
 </div>
 
